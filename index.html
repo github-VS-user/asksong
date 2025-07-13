@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Propose a Song</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background: #f0f0f0;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎶 Propose a Song</h2>
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <input type="text" name="song" placeholder="Song title + artist" required />
+    <textarea name="reason" placeholder="Why do you recommend it?" rows="4"></textarea>
+    
+    <!-- Anti-spam -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <!-- Redirect after submit -->
+    <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+
+    <button type="submit">Submit 🎧</button>
+  </form>
+
+</body>
+</html>
