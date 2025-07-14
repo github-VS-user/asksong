@@ -3,57 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Propose a Song</title>
+  <title>Propose a Song 🎶</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      padding: 1rem;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
       padding: 2rem;
-      background: #f0f0f0;
-    }
-    form {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 400px;
+      max-width: 420px;
       width: 100%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
-    input, textarea, button {
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    input[type="text"],
+    textarea {
       width: 100%;
       padding: 0.75rem;
       margin-top: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background: #007bff;
-      color: white;
       border: none;
-      cursor: pointer;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      resize: vertical;
     }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #bbb;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.9rem;
+      background: #ff416c;
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
     button:hover {
-      background: #0056b3;
+      transform: scale(1.03);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <h2>🎶 Propose a Song</h2>
-  <form action="https://formsubmit.co/dariodibonaoff@gmail.com" method="POST">
-    <input type="text" name="song" placeholder="Song title + artist" required />
-    <textarea name="reason" placeholder="Why do you recommend it?" rows="4"></textarea>
-    
-    <!-- Anti-spam -->
-    <input type="hidden" name="_captcha" value="false">
-    
-    <!-- Redirect after submit -->
-    <input type="hidden" name="_next" value="https://music.master3d.net/thankyou.html">
+  <div class="container">
+    <h2>🎶 Propose a Song</h2>
+    <form action="https://formsubmit.co/dariodibonaoff@gmail.com" method="POST">
+      
+      <label for="song">Song Title + Artist</label>
+      <input type="text" id="song" name="song" placeholder="e.g. Blinding Lights - The Weeknd" required />
 
-    <button type="submit">Submit 🎧</button>
-  </form>
+      <label for="reason">Why do you recommend it?</label>
+      <textarea id="reason" name="reason" placeholder="It's the perfect vibe for summer..." rows="4"></textarea>
+
+      <!-- Anti-spam -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Redirect -->
+      <input type="hidden" name="_next" value="https://music.master3d.net/thankyou.html">
+
+      <button type="submit">Submit 🎧</button>
+    </form>
+
+    <div class="footer">Made with ❤️ by Dario</div>
+  </div>
 
 </body>
 </html>
